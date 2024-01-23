@@ -6,9 +6,9 @@ export abstract class Shape extends Graphics {
         this.beginFill(color);
     }
 
-    abstract draw(): void;
+    abstract draw(): void; // draw shape
 
-    abstract getArea(): number;
+    abstract getArea(): number; // get shape area
 }
 
 export class Triangle extends Shape {
@@ -49,6 +49,7 @@ export class Rectangle extends Shape {
     draw(): void {
         this.drawRect(0, 0, this.rectWidth, this.rectHeight);
         this.pivot.set(this.rectWidth, 0);
+        this.position.set(this.position.x, -this.rectHeight);
     }
 
     getArea(): number {
@@ -180,7 +181,7 @@ export class Star extends Shape {
         let n, dx, dy;
         this.moveTo(
             Math.cos(start) * this.outerRadius,
-            Math.sin(start) * this.outerRadius
+            Math.sin(start) * this.outerRadius,
         );
 
         for (n = 1; n <= this.points; ++n) {

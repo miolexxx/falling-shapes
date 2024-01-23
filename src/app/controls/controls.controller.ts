@@ -10,10 +10,18 @@ export class ControlsController {
         this.view = view;
     }
 
+    /**
+     * Update model gravity field
+     * @param gravity - gravity value
+     */
     setGravity(gravity: number) {
         this.model.gravity = gravity;
     }
 
+    /**
+     * Update model shapesPerSecond field
+     * @param shapesPerSecond - shapes per second value
+     */
     setShapesPerSecond(shapesPerSecond: number) {
         this.model.shapesPerSecond = shapesPerSecond;
     }

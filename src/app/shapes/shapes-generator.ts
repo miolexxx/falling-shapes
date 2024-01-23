@@ -12,6 +12,9 @@ import {
 import { SHAPE_SIZE_LIMIT } from '../config';
 
 export class ShapesGenerator {
+    /**
+     * @return - Random shape from SHAPE_TYPES with size limited in SHAPE_SIZE_LIMIT
+     */
     static generateRandomShape(): Shape {
         const randomShapeType =
             SHAPE_TYPES[Math.floor(Math.random() * SHAPE_TYPES.length)];
@@ -20,45 +23,50 @@ export class ShapesGenerator {
             case Triangle:
                 return new Triangle(
                     randomColor,
-                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE)
+                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE),
                 );
             case Rectangle:
                 return new Rectangle(
                     randomColor,
                     this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE),
-                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE)
+                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE),
                 );
             case Pentagon:
                 return new Pentagon(
                     randomColor,
-                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE)
+                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE),
                 );
             case Hexagon:
                 return new Hexagon(
                     randomColor,
-                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE)
+                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE),
                 );
             case Circle:
                 return new Circle(
                     randomColor,
-                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE) / 2
+                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE) / 2,
                 );
             case Ellipse:
                 return new Ellipse(
                     randomColor,
                     this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE) / 2,
-                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE) / 2
+                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE) / 2,
                 );
             case Star:
                 return new Star(
                     randomColor,
-                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE) / 2
+                    this.getRandomSize(SHAPE_SIZE_LIMIT.SIZE) / 2,
                 );
             default:
                 throw new Error('Invalid shape type');
         }
     }
 
+    /**
+     * @return - random size in 'sizeLimit' range
+     * @param sizeLimit - size limit config
+     * @private
+     */
     private static getRandomSize(sizeLimit: {
         MIN: number;
         MAX: number;

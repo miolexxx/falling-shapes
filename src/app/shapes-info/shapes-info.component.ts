@@ -8,11 +8,14 @@ export class ShapesInfoComponent {
     constructor() {
         this.shapesInfoView = new ShapesInfoView();
         this.shapesInfoController = new ShapesInfoController(
-            this.shapesInfoView
+            this.shapesInfoView,
         );
     }
 
-    update(num: number, area: number) {
-        this.shapesInfoController.update(num, area);
+    /**
+     * @return - ShapesInfoController
+     */
+    get controller() {
+        return this.shapesInfoController;
     }
 }

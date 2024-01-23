@@ -10,30 +10,40 @@ export class ControlsView {
     protected gravity: HTMLInputElement;
 
     constructor() {
+        // init controls elements
         this.shapesPerSecondPlus = document.getElementById(
-            'shapes-per-second-plus'
+            'shapes-per-second-plus',
         ) as HTMLInputElement;
         this.shapesPerSecondMinus = document.getElementById(
-            'shapes-per-second-minus'
+            'shapes-per-second-minus',
         ) as HTMLInputElement;
         this.gravityPlus = document.getElementById(
-            'gravity-plus'
+            'gravity-plus',
         ) as HTMLInputElement;
         this.gravityMinus = document.getElementById(
-            'gravity-minus'
+            'gravity-minus',
         ) as HTMLInputElement;
         this.shapesPerSecond = document.getElementById(
-            'shapes-per-second'
+            'shapes-per-second',
         ) as HTMLInputElement;
         this.gravity = document.getElementById('gravity') as HTMLInputElement;
 
+        // init control elements handlers
         this.initHandlers();
     }
 
+    /**
+     * Set ControlsController
+     * @param controller - ControlsController
+     */
     setController(controller: ControlsController) {
         this.controller = controller;
     }
 
+    /**
+     * Init controls elements handlers
+     * @protected
+     */
     protected initHandlers() {
         this.shapesPerSecondPlus.addEventListener('click', () => {
             const num = Number.parseInt(this.shapesPerSecond.value);

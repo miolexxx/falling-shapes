@@ -6,6 +6,7 @@ export class ShapesStageComponent {
     view: ShapesStageView;
     protected controller: ShapesStageController;
 
+    // init view and controller
     constructor(app: Application) {
         this.view = new ShapesStageView(app);
         this.controller = new ShapesStageController(this.view, app);

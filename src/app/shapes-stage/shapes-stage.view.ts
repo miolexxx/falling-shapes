@@ -12,18 +12,34 @@ export class ShapesStageView extends Container {
         this.app = app;
     }
 
+    /**
+     * Set controller
+     * @param controller
+     */
     setController(controller: ShapesStageController) {
         this.controller = controller;
     }
 
+    /**
+     * Add shape to stage
+     * @param shape
+     */
     addShape(shape: Shape) {
         this.addChild(shape);
     }
 
+    /**
+     * Remove shape from stage
+     * @param shape
+     */
     removeShape(shape: Shape) {
-        shape.destroy();
+        this.removeChild(shape);
     }
 
+    /**
+     * Init stage view
+     * Create background and init it onclick listener
+     */
     init() {
         this.background = new Sprite(Texture.WHITE);
         this.background.tint = 0xfafafa;

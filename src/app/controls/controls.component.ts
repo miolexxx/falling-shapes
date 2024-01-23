@@ -7,6 +7,7 @@ export class ControlsComponent {
     protected view: ControlsView;
     protected controller: ControlsController;
 
+    // init model, view and controller
     constructor() {
         this.model = new ControlsModel();
         this.view = new ControlsView();

@@ -7,10 +7,18 @@ export class ShapesInfoView {
         this.shapesArea = document.getElementById('shapes-area')!;
     }
 
+    /**
+     * Update 'Shapes number' text
+     * @param num - shapes number
+     */
     setShapesNumber(num: number) {
         this.shapesNumber.innerText = num.toString();
     }
 
+    /**
+     * Update 'Occupied area' text
+     * @param area - total shapes area
+     */
     setShapesArea(area: number) {
         this.shapesArea.innerText = area.toFixed(0);
     }
